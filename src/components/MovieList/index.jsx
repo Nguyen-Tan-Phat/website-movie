@@ -1,6 +1,85 @@
-import React, { useState, useEffect } from "react";
+import { data } from "autoprefixer";
+import React, { useEffect, useState } from "react";
 
-function MoviePage() {
+function MovieList() {
+//   const [selectValue, setSelectValue] = useState([
+//     {
+//       id: 1,
+//       name: "type",
+//       value: [
+//         { id: 0, name: "ALL" },
+//         { id: 1, name: "Drama" },
+//         { id: 2, name: "Action" },
+//         { id: 3, name: "Comedy" },
+//         { id: 4, name: "Thriler" },
+//       ],
+//     },
+//     {
+//       id: 2,
+//       name: "Country",
+//       value: [
+//         { id: 0, name: "ALL" },
+//         { id: 1, name: "United States" },
+//         { id: 2, name: "Canada" },
+//         { id: 3, name: "France" },
+//         { id: 4, name: "Germany" },
+//       ],
+//     },
+//     {
+//       id: 3,
+//       name: "year",
+//       value: [
+//         { id: 0, name: "ALL" },
+//         { id: 1, name: "2023" },
+//         { id: 2, name: "2022" },
+//         { id: 3, name: "2021" },
+//         { id: 4, name: "2020" },
+//         { id: 5, name: "2019" },
+//         { id: 6, name: "2018" },
+//         { id: 7, name: "2017" },
+//         { id: 8, name: "2016" },
+//         { id: 9, name: "2015" },
+//         { id: 10, name: "2014" },
+//         { id: 11, name: "2013" },
+//         { id: 11, name: "1994" },
+//         { id: 13, name: "Trước 2012" },
+//       ],
+//     },
+//     {
+//       id: 4,
+//       name: "duration",
+//       value: [
+//         { id: 0, name: "ALL" },
+//         { id: 1, name: "United States" },
+//         { id: 2, name: "Canada" },
+//         { id: 3, name: "France" },
+//         { id: 4, name: "Germany" },
+//       ],
+//     },
+//     {
+//       id: 5,
+//       name: "Country",
+//       value: [
+//         { id: 0, name: "ALL" },
+//         { id: 1, name: "United States" },
+//         { id: 2, name: "Canada" },
+//         { id: 3, name: "France" },
+//         { id: 4, name: "Germany" },
+//       ],
+//     },
+//     {
+//       id: 6,
+//       name: "date",
+//       value: [
+//         { id: 0, name: "ALL" },
+//         { id: 1, name: "United States" },
+//         { id: 2, name: "Canada" },
+//         { id: 3, name: "France" },
+//         { id: 4, name: "Germany" },
+//       ],
+//     },
+//   ]);
+
   const [movieList, setMovieList] = useState([
     {
       id: 1,
@@ -147,106 +226,28 @@ function MoviePage() {
     },
   ]);
 
-  const [selectValue, setSelectValue] = React.useState([
-    {
-      id: 1,
-      name: "type",
-      value: [
-        { id: 0, name: "ALL" },
-        { id: 1, name: "Drama" },
-        { id: 2, name: "Action" },
-        { id: 3, name: "Comedy" },
-        { id: 4, name: "Thriler" },
-      ],
-    },
-    {
-      id: 2,
-      name: "Country",
-      value: [
-        { id: 0, name: "ALL" },
-        { id: 1, name: "United States" },
-        { id: 2, name: "Canada" },
-        { id: 3, name: "France" },
-        { id: 4, name: "Germany" },
-      ],
-    },
-    {
-      id: 3,
-      name: "year",
-      value: [
-        { id: 0, name: "ALL" },
-        { id: 1, name: "2023" },
-        { id: 2, name: "2022" },
-        { id: 3, name: "2021" },
-        { id: 4, name: "2020" },
-        { id: 5, name: "2019" },
-        { id: 6, name: "2018" },
-        { id: 7, name: "2017" },
-        { id: 8, name: "2016" },
-        { id: 9, name: "2015" },
-        { id: 10, name: "2014" },
-        { id: 11, name: "2013" },
-        { id: 11, name: "1994" },
-        { id: 13, name: "Trước 2012" },
-      ],
-    },
-    {
-      id: 4,
-      name: "duration",
-      value: [
-        { id: 0, name: "ALL" },
-        { id: 1, name: "United States" },
-        { id: 2, name: "Canada" },
-        { id: 3, name: "France" },
-        { id: 4, name: "Germany" },
-      ],
-    },
-    {
-      id: 5,
-      name: "Country",
-      value: [
-        { id: 0, name: "ALL" },
-        { id: 1, name: "United States" },
-        { id: 2, name: "Canada" },
-        { id: 3, name: "France" },
-        { id: 4, name: "Germany" },
-      ],
-    },
-    {
-      id: 6,
-      name: "date",
-      value: [
-        { id: 0, name: "ALL" },
-        { id: 1, name: "United States" },
-        { id: 2, name: "Canada" },
-        { id: 3, name: "France" },
-        { id: 4, name: "Germany" },
-      ],
-    },
-  ]);
+//   const [selectedValue, setSelectedValue] = useState([]);
+//   const [DataReload, setDataReload] = useState([]);
 
-  const [selectedValue, setSelectedValue] = useState([]);
-  const [DataReload, setDataReload] = useState([]);
+//   useEffect(() => {
+//     if (selectedValue.length > 0) {
+//       const result = movieList.filter((item) => {
+//         return (
+//           selectedValue.includes(item.genre.split(",")[0].trim()) ||
+//           selectedValue.includes(item.year)
+//         );
+//       });
 
-  useEffect(() => {
-    if (selectedValue.length > 0) {
-      const result = movieList.filter((item) => {
-        return (
-          selectedValue.includes(item.genre.split(",")[0].trim()) ||
-          selectedValue.includes(item.year)
-        );
-      });
-
-      setMovieList(result);
-      console.log(result, "result");
-    }
-  }, [selectedValue]);
+//       setDataReload(result);
+//       console.log(result, "result");
+//     }
+//   }, [selectedValue]);
 
   return (
     <div>
-      <div className="grid md:grid-cols-6 gap-2  mt-[5%] p-2 ">
-        {/*  */}
-        {selectValue.map((item) => (
+
+      <div className="grid grid-cols-6 gap-2  mt-[5%] p-2 ">
+      
           <div>
             <span className="font-bold ">{item.name}: </span>
             <label
@@ -270,10 +271,10 @@ function MoviePage() {
               ))}
             </select>
           </div>
-        ))}
+    
       </div>
 
-      <div className="grid md:grid-cols-4 gap-1 p-10">
+      <div className="grid grid-cols-4 gap-1">
         {movieList.map((movie) => (
           <div className="bg-white rounded-lg shadow-lg overflow-hidden ">
             <img
@@ -286,17 +287,17 @@ function MoviePage() {
                 {movie.name}
               </h2>
               <p className="text-gray-700 text-xs mb-2">
-                <strong>Year: {movie.year} </strong>
+                <strong>Year:</strong> {movie.year}
               </p>
               <p
                 className="
                   text-gray-700 text-xs mb-2
                   "
               >
-                <strong>Duration: {movie.duration}</strong>
+                <strong>Duration:</strong> {movie.duration}
               </p>
               <p className="text-gray-700 text-xs mb-2">
-                <strong>Genre: {movie.genre}</strong>
+                <strong>Genre:</strong> {movie.genre}
               </p>
               <a
                 href="https://www.youtube.com/watch?v=6hB3S9bIaco"
@@ -313,4 +314,4 @@ function MoviePage() {
   );
 }
 
-export default MoviePage;
+export default MovieList;

@@ -5,7 +5,7 @@ function SelectBottom() {
         <div >
           <label
             for="countries"
-            class="block mb-2 text-sm font-medium text-gray-900 dark:text-white"
+            class="block mb-2 text-sm font-medium text-primary dark:text-white"
           >
             Select an option
           </label>
